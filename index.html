@@ -1,133 +1,137 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>김미주 — 홈 | Data Analyst 포트폴리오</title>
-<link rel="stylesheet" href="style.css">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>홈 | 김미주 포트폴리오</title>
+<style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+:root{--pr:#2563EB;--pl:#EFF6FF;--pm:#DBEAFE;--ac:#1D4ED8;--gr:#059669;--gb:#ECFDF5;--tx:#111827;--ts:#374151;--tm:#6B7280;--td:#9CA3AF;--bd:#E5E7EB;--b2:#F9FAFB;--b3:#F3F4F6;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Pretendard Variable','Pretendard',-apple-system,sans-serif;background:#fff;color:var(--tx);line-height:1.7;}
+#nav{position:fixed;top:0;left:0;right:0;height:60px;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--bd);z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
+.nbrand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nico{width:30px;height:30px;background:var(--pr);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;}
+.nnm{font-size:15px;font-weight:700;color:var(--tx);}
+.nlinks{display:flex;align-items:center;gap:2px;list-style:none;}
+.nlinks a{display:block;padding:6px 13px;border-radius:8px;font-size:13.5px;font-weight:500;color:var(--tm);text-decoration:none;transition:all .15s;white-space:nowrap;}
+.nlinks a:hover,.nlinks a.cur{background:var(--pl);color:var(--pr);}
+.nlinks a.cur{font-weight:700;}
+#layout{display:flex;padding-top:60px;min-height:100vh;}
+#sb{width:220px;flex-shrink:0;position:sticky;top:60px;height:calc(100vh - 60px);overflow-y:auto;border-right:1px solid var(--bd);background:var(--b2);padding:24px 0;}
+.sbs{margin-bottom:20px;}
+.sbl{font-size:10px;font-weight:700;color:var(--td);letter-spacing:.13em;text-transform:uppercase;padding:0 18px;margin-bottom:4px;}
+.sbu{list-style:none;}
+.sbu>li>a{display:block;padding:7px 18px;font-size:13px;font-weight:500;color:var(--tm);text-decoration:none;border-left:2px solid transparent;transition:all .15s;}
+.sbu>li>a:hover{color:var(--tx);background:var(--b3);}
+.sbu>li>a.on{color:var(--pr);border-left-color:var(--pr);background:var(--pl);font-weight:600;}
+.sbs2{list-style:none;}
+.sbs2 li a{display:block;padding:4px 18px 4px 30px;font-size:12px;color:var(--td);text-decoration:none;border-left:2px solid transparent;}
+.sbs2 li a:hover{color:var(--tm);}
+#main{flex:1;min-width:0;}
+.ps{padding:64px 64px;border-bottom:1px solid var(--bd);}
+.ps:nth-child(even){background:var(--b2);}
+.ps:last-child{border-bottom:none;}
+.wrap{max-width:820px;}
+.crumb{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--td);margin-bottom:18px;}
+.crumb a{color:var(--pr);text-decoration:none;}
+.ey{font-size:11.5px;font-weight:700;color:var(--pr);letter-spacing:.13em;text-transform:uppercase;margin-bottom:8px;}
+.sh{font-size:28px;font-weight:800;color:var(--tx);letter-spacing:-.01em;margin-bottom:10px;}
+.sd{font-size:15px;color:var(--tm);max-width:560px;line-height:1.75;margin-bottom:36px;}
+.divl{height:1px;background:var(--bd);margin:36px 0;}
+.btnp{display:inline-block;padding:11px 22px;background:var(--pr);color:#fff;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;}
+.btno{display:inline-block;padding:11px 22px;border:1.5px solid #D1D5DB;color:var(--ts);border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;background:#fff;}
+.btno:hover{border-color:var(--pr);color:var(--pr);}
+.tags{display:flex;flex-wrap:wrap;gap:5px;}
+.tag{padding:3px 9px;border-radius:100px;font-size:11px;font-weight:600;}
+.tb{background:var(--pl);color:var(--pr);}
+.tg{background:var(--b3);color:var(--tm);}
+#ft{border-top:1px solid var(--bd);padding:28px 64px;background:var(--b2);display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--td);}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease;}
+.rv.on{opacity:1;transform:none;}
+.card{background:#fff;border:1px solid var(--bd);border-radius:16px;padding:28px 30px;margin-bottom:16px;transition:all .2s;}
+.card:hover{border-color:var(--pr);box-shadow:0 6px 24px rgba(37,99,235,.08);}
+.cnum{width:34px;height:34px;border-radius:9px;background:var(--pl);color:var(--pr);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ccat{font-size:11px;font-weight:700;color:var(--pr);letter-spacing:.07em;text-transform:uppercase;margin-bottom:3px;}
+.ctit{font-size:17px;font-weight:800;color:var(--tx);line-height:1.35;}
+.cbody{font-size:13.5px;color:var(--ts);line-height:1.82;margin-bottom:14px;}
+.cres{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;background:var(--gb);border:1px solid #A7F3D0;border-radius:8px;font-size:13px;font-weight:600;color:var(--gr);margin-bottom:12px;}
+.stog{font-size:12px;color:var(--pr);cursor:pointer;font-weight:600;margin-top:8px;display:inline-block;user-select:none;}
+.sbody{display:none;margin-top:8px;}
+.sbody.open{display:block;}
+.ss{background:var(--b2);border:1px solid var(--bd);border-radius:10px;padding:14px 16px;margin-top:8px;}
+.ssl{font-size:10px;font-weight:700;color:var(--pr);letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;}
+.sst{font-size:13px;color:var(--ts);line-height:1.75;}
+.csub{font-size:11.5px;font-weight:700;color:var(--tm);letter-spacing:.07em;text-transform:uppercase;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--bd);}
+.clist{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.clist li{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:var(--ts);line-height:1.7;}
+.clist li::before{content:'•';color:var(--pr);flex-shrink:0;margin-top:1px;font-weight:700;}
+.clist li strong{color:var(--tx);font-weight:700;}
+.ccall{background:var(--pl);border:1px solid var(--pm);border-radius:10px;padding:12px 16px;margin-top:12px;font-size:13px;color:var(--ts);line-height:1.7;}
+.ccall strong{color:var(--pr);font-weight:700;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+@media(max-width:768px){#sb{display:none;}.ps{padding:48px 22px;}#ft{flex-direction:column;gap:6px;text-align:center;padding:22px;}.nlinks a{padding:6px 8px;font-size:11.5px;}}
+</style>
 </head>
 <body>
-<nav id="nav">
-  <a href="index.html" class="nav-brand">
-    <div class="nav-icon">KM</div>
-    <span class="nav-name">김미주 포트폴리오</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="about.html">소개</a></li>
-    <li><a href="skills.html">역량</a></li>
-    <li><a href="projects.html">프로젝트</a></li>
-    <li><a href="career.html">경력사항</a></li>
-  </ul>
-</nav>
-
+<nav id="nav"><a href="index.html" class="nbrand"><div class="nico">KM</div><span class="nnm">김미주 포트폴리오</span></a><ul class="nlinks"><li><a href="about.html">소개</a></li><li><a href="skills.html">역량</a></li><li><a href="projects.html">프로젝트</a></li><li><a href="career.html">경력사항</a></li></ul></nav>
 <div id="layout">
-  <aside id="sb">
-    <div class="sb-sec">
-      <div class="sb-lbl">목차</div>
-      <ul class="sb-ul">
-        <li><a href="index.html" class="on">🏠 홈</a></li>
-      </ul>
-    </div>
-    <div class="sb-sec">
-      <div class="sb-lbl">섹션</div>
-      <ul class="sb-ul">
-        <li><a href="about.html">📋 소개 · About Me</a></li>
-        <li><a href="skills.html">🛠 역량 · Core Skills</a></li>
-        <li><a href="projects.html">📁 프로젝트</a></li>
-        <li><a href="career.html">💼 경력사항</a></li>
-      </ul>
-    </div>
-  </aside>
-  <main id="main">
-    <section class="page-sec" id="hero-sec" style="background:#fff; padding:72px 64px 56px;">
-      <div class="wrap">
-        <div class="crumb">김미주 포트폴리오 / Data Analyst</div>
-        <div class="hero-top" style="display:flex; align-items:flex-start; gap:40px; margin-bottom:36px;">
-          <img src="photo.jpg" alt="김미주" style="width:120px; height:145px; object-fit:cover; border-radius:12px; border:2px solid #E5E7EB; flex-shrink:0;">
-          <div>
-            <span style="display:inline-flex;align-items:center;gap:7px;padding:5px 13px;background:#EFF6FF;border:1px solid #DBEAFE;border-radius:100px;font-size:12px;font-weight:600;color:#2563EB;margin-bottom:16px;">
-              <span style="width:6px;height:6px;border-radius:50%;background:#2563EB;animation:blink 2s infinite;display:inline-block;"></span>
-              Data Analyst · AI Researcher
-            </span>
-            <h1 style="font-size:48px;font-weight:800;line-height:1.1;letter-spacing:-.025em;color:#111827;margin-bottom:6px;">
-              <span style="color:#2563EB;">김미주</span> Kim Miju
-            </h1>
-            <div style="font-size:17px;font-weight:500;color:#6B7280;margin-bottom:14px;">부산대학교 정보융합공학과 의생명융합전공 석사</div>
-            <p style="font-size:15px;color:#374151;line-height:1.8;max-width:520px;">
-              의료 도메인의 분석력과 공학적 기술을 융합해, 데이터가 <strong>실제 정책과 의사결정에 닿는 과정</strong>을 만들어 왔습니다. 분석을 넘어, 인과추론과 실험 설계로 <strong>진짜 문제의 답</strong>을 검증합니다.
-            </p>
-          </div>
-        </div>
-        <div style="display:flex;gap:12px;margin-bottom:32px;flex-wrap:wrap;">
-          <div style="padding:16px 22px;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px;text-align:center;min-width:120px;">
-            <div style="font-size:26px;font-weight:800;color:#2563EB;letter-spacing:-.02em;">30만</div>
-            <div style="font-size:12px;color:#6B7280;margin-top:2px;font-weight:500;">코호트 분석</div>
-          </div>
-          <div style="padding:16px 22px;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px;text-align:center;min-width:120px;">
-            <div style="font-size:26px;font-weight:800;color:#2563EB;letter-spacing:-.02em;">98%</div>
-            <div style="font-size:12px;color:#6B7280;margin-top:2px;font-weight:500;">예측 정확도 (R²=0.983)</div>
-          </div>
-          <div style="padding:16px 22px;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px;text-align:center;min-width:120px;">
-            <div style="font-size:26px;font-weight:800;color:#2563EB;letter-spacing:-.02em;">3건</div>
-            <div style="font-size:12px;color:#6B7280;margin-top:2px;font-weight:500;">정책 공식 채택</div>
-          </div>
-          <div style="padding:16px 22px;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px;text-align:center;min-width:120px;">
-            <div style="font-size:26px;font-weight:800;color:#2563EB;letter-spacing:-.02em;">6+</div>
-            <div style="font-size:12px;color:#6B7280;margin-top:2px;font-weight:500;">대표 프로젝트</div>
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;">
-          <a href="projects.html" class="btn-p">프로젝트 보기 →</a>
-          <a href="career.html" class="btn-o">경력사항 보기</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="page-sec">
-      <div class="wrap">
-        <div class="eyebrow">Quick Overview</div>
-        <h2 class="sec-h">포트폴리오 구성</h2>
-        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:720px;">
-          <a href="about.html" style="text-decoration:none;">
-            <div style="background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:22px;transition:all .2s;cursor:pointer;" onmouseover="this.style.borderColor='#2563EB';this.style.boxShadow='0 4px 18px rgba(37,99,235,.09)'" onmouseout="this.style.borderColor='#E5E7EB';this.style.boxShadow='none'">
-              <div style="font-size:24px;margin-bottom:10px;">📋</div>
-              <div style="font-size:15px;font-weight:700;color:#111827;margin-bottom:4px;">소개 · About Me</div>
-              <div style="font-size:13px;color:#6B7280;">학문적 배경, 타임라인, 자격증 및 수상 이력</div>
-            </div>
-          </a>
-          <a href="skills.html" style="text-decoration:none;">
-            <div style="background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:22px;transition:all .2s;" onmouseover="this.style.borderColor='#2563EB';this.style.boxShadow='0 4px 18px rgba(37,99,235,.09)'" onmouseout="this.style.borderColor='#E5E7EB';this.style.boxShadow='none'">
-              <div style="font-size:24px;margin-bottom:10px;">🛠</div>
-              <div style="font-size:15px;font-weight:700;color:#111827;margin-bottom:4px;">역량 · Core Skills</div>
-              <div style="font-size:13px;color:#6B7280;">통계 분석, 데이터 파이프라인, ML, 시각화 등 6개 핵심 역량</div>
-            </div>
-          </a>
-          <a href="projects.html" style="text-decoration:none;">
-            <div style="background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:22px;transition:all .2s;" onmouseover="this.style.borderColor='#2563EB';this.style.boxShadow='0 4px 18px rgba(37,99,235,.09)'" onmouseout="this.style.borderColor='#E5E7EB';this.style.boxShadow='none'">
-              <div style="font-size:24px;margin-bottom:10px;">📁</div>
-              <div style="font-size:15px;font-weight:700;color:#111827;margin-bottom:4px;">프로젝트</div>
-              <div style="font-size:13px;color:#6B7280;">정책 채택까지 이어진 6개 대표 프로젝트 STAR 기반 상세 서술</div>
-            </div>
-          </a>
-          <a href="career.html" style="text-decoration:none;">
-            <div style="background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:22px;transition:all .2s;" onmouseover="this.style.borderColor='#2563EB';this.style.boxShadow='0 4px 18px rgba(37,99,235,.09)'" onmouseout="this.style.borderColor='#E5E7EB';this.style.boxShadow='none'">
-              <div style="font-size:24px;margin-bottom:10px;">💼</div>
-              <div style="font-size:15px;font-weight:700;color:#111827;margin-bottom:4px;">경력사항</div>
-              <div style="font-size:13px;color:#6B7280;">PNU EduTech Center, 의과대학 연구원, 건강형평성학회</div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <footer id="footer">
-      <div><strong style="color:#374151">김미주 Kim Miju</strong> · Data Analyst</div>
-      <div>부산대학교 정보융합공학과 의생명융합전공</div>
-    </footer>
-  </main>
+<aside id="sb"><div class="sbs"><div class="sbl">홈</div><ul class="sbu"><li><a href="index.html">🏠 홈</a></li></ul></div><div class="sbs"><div class="sbl">메뉴</div><ul class="sbu"><li><a href="about.html">📋 소개</a></li><li><a href="skills.html">🛠 역량</a></li><li><a href="projects.html">📁 프로젝트</a></li><li><a href="career.html">💼 경력사항</a></li></ul></div></aside>
+<main id="main"><section class="ps" style="background:#fff;padding:72px 64px 56px;">
+<div class="wrap">
+<div class="crumb">김미주 포트폴리오 / Data Analyst</div>
+<div style="display:flex;align-items:flex-start;gap:36px;margin-bottom:32px;">
+  <img src="data:image/jpeg;base64,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" style="width:110px;height:134px;object-fit:cover;border-radius:12px;border:2px solid #E5E7EB;flex-shrink:0;" alt="김미주">
+  <div>
+    <span style="display:inline-flex;align-items:center;gap:7px;padding:5px 13px;background:#EFF6FF;border:1px solid #DBEAFE;border-radius:100px;font-size:12px;font-weight:600;color:#2563EB;margin-bottom:16px;"><span style="width:6px;height:6px;border-radius:50%;background:#2563EB;animation:blink 2s infinite;display:inline-block;"></span>Data Analyst · AI Researcher</span>
+    <h1 style="font-size:46px;font-weight:800;line-height:1.1;letter-spacing:-.025em;color:#111827;margin-bottom:6px;"><span style="color:#2563EB;">김미주</span> Kim Miju</h1>
+    <div style="font-size:16px;font-weight:500;color:#6B7280;margin-bottom:14px;">부산대학교 정보융합공학과 의생명융합전공 석사</div>
+    <p style="font-size:15px;color:#374151;line-height:1.8;max-width:480px;">의료 도메인의 분석력과 공학적 기술을 융합해, 데이터가 <strong>실제 정책과 의사결정에 닿는 과정</strong>을 만들어 왔습니다. 분석을 넘어, 인과추론과 실험 설계로 <strong>진짜 문제의 답</strong>을 검증합니다.</p>
+  </div>
 </div>
-<style>
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
-</style>
-</body>
-</html>
+<div style="display:flex;gap:12px;margin-bottom:32px;flex-wrap:wrap;">
+  <div style="padding:14px 20px;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px;text-align:center;min-width:110px;"><div style="font-size:24px;font-weight:800;color:#2563EB;letter-spacing:-.02em;">30만</div><div style="font-size:12px;color:#6B7280;margin-top:2px;font-weight:500;">코호트 분석</div></div>
+  <div style="padding:14px 20px;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px;text-align:center;min-width:110px;"><div style="font-size:24px;font-weight:800;color:#2563EB;letter-spacing:-.02em;">98%</div><div style="font-size:12px;color:#6B7280;margin-top:2px;font-weight:500;">예측 정확도 (R²=0.983)</div></div>
+  <div style="padding:14px 20px;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px;text-align:center;min-width:110px;"><div style="font-size:24px;font-weight:800;color:#2563EB;letter-spacing:-.02em;">3건</div><div style="font-size:12px;color:#6B7280;margin-top:2px;font-weight:500;">정책 공식 채택</div></div>
+  <div style="padding:14px 20px;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px;text-align:center;min-width:110px;"><div style="font-size:24px;font-weight:800;color:#2563EB;letter-spacing:-.02em;">6+</div><div style="font-size:12px;color:#6B7280;margin-top:2px;font-weight:500;">대표 프로젝트</div></div>
+</div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;">
+  <a href="projects.html" class="btnp">프로젝트 보기 →</a>
+  <a href="career.html" class="btno">경력사항 보기</a>
+</div>
+</div>
+</section>
+<section class="ps">
+<div class="wrap">
+<div class="ey">Quick Overview</div>
+<h2 class="sh">포트폴리오 구성</h2>
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:700px;">
+  <a href="about.html" style="text-decoration:none;display:block;background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:22px;transition:all .2s;" onmouseover="this.style.borderColor='#2563EB'" onmouseout="this.style.borderColor='#E5E7EB'">
+    <div style="font-size:22px;margin-bottom:8px;">📋</div>
+    <div style="font-size:14px;font-weight:700;color:#111827;margin-bottom:4px;">소개 · About Me</div>
+    <div style="font-size:12.5px;color:#6B7280;">학문적 배경, 타임라인, 자격증 및 수상 이력</div>
+  </a>
+  <a href="skills.html" style="text-decoration:none;display:block;background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:22px;transition:all .2s;" onmouseover="this.style.borderColor='#2563EB'" onmouseout="this.style.borderColor='#E5E7EB'">
+    <div style="font-size:22px;margin-bottom:8px;">🛠</div>
+    <div style="font-size:14px;font-weight:700;color:#111827;margin-bottom:4px;">역량 · Core Skills</div>
+    <div style="font-size:12.5px;color:#6B7280;">통계 분석, 데이터 파이프라인, ML, 시각화 등 6개 핵심 역량</div>
+  </a>
+  <a href="projects.html" style="text-decoration:none;display:block;background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:22px;transition:all .2s;" onmouseover="this.style.borderColor='#2563EB'" onmouseout="this.style.borderColor='#E5E7EB'">
+    <div style="font-size:22px;margin-bottom:8px;">📁</div>
+    <div style="font-size:14px;font-weight:700;color:#111827;margin-bottom:4px;">프로젝트 (8개)</div>
+    <div style="font-size:12.5px;color:#6B7280;">정책 채택까지 이어진 대표 프로젝트 STAR 기반 상세 서술</div>
+  </a>
+  <a href="career.html" style="text-decoration:none;display:block;background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:22px;transition:all .2s;" onmouseover="this.style.borderColor='#2563EB'" onmouseout="this.style.borderColor='#E5E7EB'">
+    <div style="font-size:22px;margin-bottom:8px;">💼</div>
+    <div style="font-size:14px;font-weight:700;color:#111827;margin-bottom:4px;">경력사항</div>
+    <div style="font-size:12.5px;color:#6B7280;">PNU EduTech Center, 의과대학 연구원, 건강형평성학회</div>
+  </a>
+</div>
+</div>
+</section><footer id="ft"><div><strong style="color:#374151">김미주 Kim Miju</strong> · Data Analyst</div><div>부산대학교 정보융합공학과 의생명융합전공</div></footer></main>
+</div>
+<script>
+const rv=document.querySelectorAll('.rv');
+const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');ro.unobserve(e.target);}});},{threshold:.05,rootMargin:'0px 0px -30px 0px'});
+rv.forEach(el=>ro.observe(el));
+function tog(el){const b=el.nextElementSibling;b.classList.toggle('open');el.textContent=b.classList.contains('open')?'▲ STAR 닫기':'▼ STAR 상세 보기';}
+</script>
+</body></html>
