@@ -2,146 +2,30 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>프로젝트 — 김미주 포트폴리오</title>
-<link rel="stylesheet" href="shared.css">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>프로젝트</title>
+<link rel="stylesheet" href="_shared.css">
 <style>
-.pj-list { display:flex; flex-direction:column; gap:14px; }
-.pj { background:#fff; border:1px solid var(--border); border-radius:16px; padding:24px 26px; transition:all .2s; }
-.pj:hover { border-color:var(--primary); box-shadow:0 4px 20px rgba(37,99,235,.08); }
-.pj-head { display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; }
-.pj-num { width:32px; height:32px; border-radius:9px; background:var(--primary-light); color:var(--primary); font-size:12px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-.pj-cat { font-size:10.5px; font-weight:700; color:var(--primary); letter-spacing:.07em; text-transform:uppercase; margin-bottom:3px; }
-.pj-title { font-size:15.5px; font-weight:800; color:var(--text); line-height:1.35; }
-.pj-body { font-size:13.5px; color:var(--text-sub); line-height:1.8; margin-bottom:12px; }
-.pj-res { display:inline-flex; align-items:center; gap:6px; padding:6px 13px; background:var(--green-bg); border:1px solid #A7F3D0; border-radius:8px; font-size:12.5px; font-weight:600; color:var(--green); margin-bottom:10px; flex-wrap:wrap; }
-.pj-tags { display:flex; flex-wrap:wrap; gap:5px; }
-.star-detail { background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding:12px 14px; margin-top:12px; }
-.star-detail summary { font-size:13px; font-weight:600; color:var(--text); cursor:pointer; list-style:none; display:flex; align-items:center; gap:6px; }
-.star-detail summary::before { content:'▶'; font-size:10px; color:var(--primary); transition:transform .2s; }
-.star-detail[open] summary::before { transform:rotate(90deg); }
-.star-body { margin-top:10px; padding-top:10px; border-top:1px solid var(--border); display:flex; flex-direction:column; gap:8px; }
-.star-row { font-size:13px; color:var(--text-sub); line-height:1.7; }
-.star-label { font-size:10px; font-weight:700; color:var(--primary); letter-spacing:.08em; text-transform:uppercase; margin-bottom:2px; }
-@media (max-width:768px) {
-  .pj { padding:18px 18px; }
-  .pj-title { font-size:14.5px; }
-  .pj-body { font-size:13px; }
-}
+.pj-list{display:flex;flex-direction:column;gap:16px;}
+.pj{background:#fff;border:1px solid var(--border);border-radius:16px;padding:26px 28px;transition:all .2s;}
+.pj:hover{border-color:var(--primary);box-shadow:0 6px 24px rgba(37,99,235,.08);}
+.pj-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:12px;}
+.pj-num{width:34px;height:34px;border-radius:9px;background:var(--primary-light);color:var(--primary);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.pj-cat{font-size:11px;font-weight:700;color:var(--primary);letter-spacing:.07em;text-transform:uppercase;margin-bottom:3px;}
+.pj-title{font-size:16px;font-weight:800;color:var(--text);line-height:1.35;}
+.pj-body{font-size:13.5px;color:var(--text-sub);line-height:1.82;margin-bottom:14px;}
+.pj-res{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;background:var(--green-bg);border:1px solid #A7F3D0;border-radius:8px;font-size:13px;font-weight:600;color:var(--green);margin-bottom:12px;}
+.star-d{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-top:14px;font-size:13px;color:var(--text-sub);line-height:1.75;}
+.star-d summary{font-weight:600;color:var(--text);cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px;}
+.star-d summary::before{content:"▶";font-size:10px;color:var(--primary);transition:transform .2s;}
+.star-d[open] summary::before{transform:rotate(90deg);}
+.star-d .sb{margin-top:10px;padding-top:10px;border-top:1px solid var(--border);}
+.sr{margin-bottom:8px;}
+.sl{font-size:11px;font-weight:700;color:var(--primary);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}
 </style>
 </head>
-<body>
-<nav id="nav">
-  <a href="index.html" class="nav-brand"><div class="nav-icon">KM</div><span class="nav-name">김미주 포트폴리오</span></a>
-  <ul class="nav-links"><li><a href="index.html">홈</a></li><li><a href="about.html">소개</a></li><li><a href="skills.html">역량</a></li><li><a href="projects.html" class="active">프로젝트</a></li><li><a href="career.html">경력사항</a></li></ul>
-  <button class="nav-hamburger" id="hamburger" aria-label="메뉴"><span></span><span></span><span></span></button>
-</nav>
-<div class="nav-drawer" id="drawer"><a href="index.html">🏠 홈</a><a href="about.html">📋 소개</a><a href="skills.html">🛠 역량</a><a href="projects.html" class="active">📁 프로젝트</a><a href="career.html">💼 경력사항</a></div>
-<div id="wrap">
-  <aside id="sb">
-    <div class="sb-sec"><div class="sb-lbl">프로젝트</div>
-      <ul class="sb-ul">
-        <li><a href="#p01" data-id="p01">01 · 코호트 인과추론</a></li>
-        <li><a href="#p02" data-id="p02">02 · 미세먼지 예측</a></li>
-        <li><a href="#p03" data-id="p03">03 · 건강격차 해소</a></li>
-        <li><a href="#p04" data-id="p04">04 · 학회 시스템화</a></li>
-        <li><a href="#p05" data-id="p05">05 · 응급의료 분석</a></li>
-        <li><a href="#p06" data-id="p06">06 · 기대해 앱</a></li>
-        <li><a href="#p07" data-id="p07">07 · 서울시 빅데이터</a></li>
-        <li><a href="#p08" data-id="p08">08 · AI 감정분석</a></li>
-      </ul>
-    </div>
-    <div class="sb-sec"><div class="sb-lbl">다른 페이지</div>
-      <ul class="sb-ul">
-        <li><a href="about.html">📋 소개</a></li>
-        <li><a href="skills.html">🛠 역량</a></li>
-        <li><a href="career.html">💼 경력사항</a></li>
-      </ul>
-    </div>
-  </aside>
-  <main id="main">
-    <section class="sec" id="p01">
-      <div class="wrap">
-        <div class="eyebrow">Projects</div>
-        <h2 class="sec-h">데이터가 정책이 되는 순간들</h2>
-        <p class="sec-d">연구실에서 시작해 실제 정책 데이터로 채택된 대표 프로젝트입니다.</p>
-        <div class="pj-list">
-
-          <div class="pj rv">
-            <div class="pj-head"><div class="pj-num">01</div><div><div class="pj-cat">경력 · 인과추론</div><div class="pj-title">초미세먼지 노출에 따른 만성 신장질환자의 AKI 발생 위험 분석</div></div></div>
-            <p class="pj-body">국민건강보험공단 2010–2019년 30만 명 코호트를 활용해 PM2.5 장기 노출이 CKD 환자의 AKI 발생에 미치는 인과적 영향을 검증했습니다. 기존 고정 노출 가정 모델의 한계를 극복하기 위해 Time-varying Cox Model을 설계하고, 1:2 성향점수매칭으로 혼란 변수를 통제해 결과의 견고성을 확보했습니다.</p>
-            <div class="pj-res">🏆 HR 1.05 입증 (p&lt;.001) · RHR 1.13 · 국제 신장학회(APCN) 제1저자 발표</div>
-            <div class="pj-tags"><span class="tag b">Time-varying Cox</span><span class="tag b">PSM 1:2</span><span class="tag b">Causal Inference</span><span class="tag b">R</span><span class="tag g">#인과추론</span></div>
-            <details class="star-detail"><summary>STAR 상세 보기</summary><div class="star-body"><div class="star-row"><div class="star-label">Situation</div>PM2.5 노출과 CKD 환자의 AKI 발생 위험 분석. 고정 노출 가정 모델은 시간 간극과 변하는 Confounders를 통제하지 못했습니다.</div><div class="star-row"><div class="star-label">Task</div>10년 규모 건강보험공단 데이터에서 시간 가변적 노출 환경을 반영하면서 혼란 변수를 통제해 결과 신뢰도를 확보해야 했습니다.</div><div class="star-row"><div class="star-label">Action</div>Time-varying Cox Model 설계, 사망·이탈자 중도절단 처리, 1:2 PSM 적용, 공변수 균형 확보.</div><div class="star-row"><div class="star-label">Result</div>PM2.5 단위 증가 시 CKD 환자의 AKI 발생 위험 1.05배 상승 입증 · PSM 후에도 RHR 1.13으로 견고성 확인 · 국제 신장학회 1저자 발표.</div></div></details>
-          </div>
-
-          <div class="pj rv" id="p02">
-            <div class="pj-head"><div class="pj-num">02</div><div><div class="pj-cat">경력 · 예측 모델링 · 수상</div><div class="pj-title">위성 데이터 파이프라인 × GAM 앙상블 — 예측 정확도 98% (R²=0.983)</div></div></div>
-            <p class="pj-body">기상청 단일 관측소의 대표성 한계를 발견하고 세부 집단에서 결과가 달라지는 원인을 추적했습니다. Google Earth Engine으로 1km² 격자 DB를 직접 구축하고, 대기 잡음으로 인한 30% 결측치는 인접 시점·지역 데이터를 활용하는 보정 방식으로 해결했습니다. SVR·RF·XGBoost 앙상블 + GAM 비선형성 보정을 결합해 최종 모델을 완성했습니다.</p>
-            <div class="pj-res">🏆 환경부 기후변화 대응 환경보건센터 공식 채택 · 산학캡스톤 장려상</div>
-            <div class="pj-tags"><span class="tag b">Google Earth Engine</span><span class="tag b">GAM 앙상블</span><span class="tag b">XGBoost</span><span class="tag b">Python / R</span><span class="tag g">#파이프라인</span></div>
-            <details class="star-detail"><summary>STAR 상세 보기</summary><div class="star-body"><div class="star-row"><div class="star-label">Situation</div>기상청 GIS 데이터가 자치구 1개 관측소로 넓은 지역을 대표 → 세부 집단에서 결과가 유의하지 않는 오류 발견.</div><div class="star-row"><div class="star-label">Task</div>데이터 정합도 검증 및 오류 원인 규명, 지역별 편차와 비선형 관계를 반영한 예측 모델 고도화.</div><div class="star-row"><div class="star-label">Action</div>위성 기반 1km² 격자 DB 직접 구축 → 보간 기법으로 30% 결측 보정 → 트리 기반 3종 앙상블 → GAM + Spline 비선형성 보정 결합.</div><div class="star-row"><div class="star-label">Result</div>예측 정확도 98% 달성 · 환경부 공식 채택 · 산학캡스톤 장려상.</div></div></details>
-          </div>
-
-          <div class="pj rv" id="p03">
-            <div class="pj-head"><div class="pj-num">03</div><div><div class="pj-cat">경력 · 정책 효과 검증</div><div class="pj-title">부산시 소지역 건강격차 해소사업 — DID 분석 및 성과지표 개발</div></div></div>
-            <p class="pj-body">3년간 수행된 건강증진사업에서 담당자별로 엉킨 엑셀로 데이터 무결성이 훼손되어 있었고 의료진·복지사 간 지표 갈등이 발생했습니다. 1,703명 원천 데이터 전수조사(수천 장 설문지 직접 검토, 주소지 한 건씩 대조), Python 파이프라인 자동화, '질환인지율' 신규 지표 개발로 이해관계자 합의를 이끌어냈습니다. DID 실험 설계로 대조 지역 대비 200% 개선 효과를 인과적으로 입증했습니다.</p>
-            <div class="pj-res">🏆 대조 지역 대비 200% 개선 · 차년도 사업 확장 공식 근거 자료</div>
-            <div class="pj-tags"><span class="tag b">DID</span><span class="tag b">A/B Test</span><span class="tag b">SAS</span><span class="tag b">Python</span><span class="tag b">패널 DB</span><span class="tag g">#갈등관리</span></div>
-            <details class="star-detail"><summary>STAR 상세 보기</summary><div class="star-body"><div class="star-row"><div class="star-label">Situation</div>비정형·파편화 데이터 + 의료진·복지사 간 지표 갈등 → 데이터 무결성과 지표 합의가 동시에 필요한 상황.</div><div class="star-row"><div class="star-label">Task</div>1,703명 패널 DB 구축 · DID로 순효과 검증 · 양측이 납득할 수 있는 성과 지표 합의 도출.</div><div class="star-row"><div class="star-label">Action</div>수천 장 설문지 전수 확인 · 주소지 대조 · SPSS로 결측치 정제 · Python 전처리 파이프라인 · 선행 연구 기반 '질환인지율' 지표 제안 · DID 분석.</div><div class="star-row"><div class="star-label">Result</div>대조 지역 대비 200% 개선 증명 · 차년도 사업 확장 근거 · 코딩 가이드라인 공식 기준 채택.</div></div></details>
-          </div>
-
-          <div class="pj rv" id="p04">
-            <div class="pj-head"><div class="pj-num">04</div><div><div class="pj-cat">경력 · 시스템화</div><div class="pj-title">한국건강형평성학회 간사 — 수기 프로세스 → 자동화 파이프라인</div></div></div>
-            <p class="pj-body">엑셀 수기 회원 관리 체계를 개선하기 위해 Figma로 웹 UI를 직접 기획하고, 정밀 DB 구축 및 이메일 연동 자동화 홍보 시스템을 단독 구축했습니다. 외부 솔루션 도입을 검토했으나 예산 제한으로 자체 제작 방향으로 전환했습니다.</p>
-            <div class="pj-res">🏆 정회원 500명 → 1,200명 (+140%) · 재정자립도 200% 향상</div>
-            <div class="pj-tags"><span class="tag b">Python</span><span class="tag b">Figma</span><span class="tag b">웹 개발</span><span class="tag b">이메일 자동화</span><span class="tag g">#시스템화</span></div>
-          </div>
-
-          <div class="pj rv" id="p05">
-            <div class="pj-head"><div class="pj-num">05</div><div><div class="pj-cat">경력 · 이종데이터 통합</div><div class="pj-title">부산시 응급의료 분석 및 지역별 건강취약지수 모델링</div></div></div>
-            <p class="pj-body">7대 광역시 응급의료 데이터에서 출처가 다른 20여 개 복합 변수를 연계해야 했고, 다중공선성 문제가 있었습니다. 상관관계 히트맵으로 중복 변수를 제거하고, Z-score 표준화 → Estimate 기반 취약지수 산출 로직을 직접 설계했습니다. 샘플 데이터 초안으로 팀 내 변수 선정 의견을 조율하고, QGIS+Tableau로 시각화해 정책 담당자를 설득했습니다.</p>
-            <div class="pj-res">🏆 부산시 보건정책 공식 근거 자료 채택 · 정책 브리핑 자료 활용</div>
-            <div class="pj-tags"><span class="tag b">QGIS</span><span class="tag b">Tableau</span><span class="tag b">Python</span><span class="tag b">이종데이터 통합</span><span class="tag g">#이견 조율</span></div>
-            <details class="star-detail"><summary>STAR 상세 보기</summary><div class="star-body"><div class="star-row"><div class="star-label">Situation</div>20여 개 이종 변수 연계 환경 · 다중공선성으로 분석 왜곡 위험 · 팀 내 변수 선정 의견 충돌.</div><div class="star-row"><div class="star-label">Task</div>데이터 전처리·변수 선정 총괄 · 지역별 건강 위험을 하나의 지표로 정량화.</div><div class="star-row"><div class="star-label">Action</div>상관관계 히트맵으로 중복 제거 → Z-score 표준화 → Estimate 기반 지수 설계 → 샘플 데이터 초안으로 팀 합의 → QGIS+Tableau 시각화.</div><div class="star-row"><div class="star-label">Result</div>부산시 보건정책 공식 근거 자료 채택 · 질환별 고위험 지역 탐지 · 정책 브리핑 자료 활용.</div></div></details>
-          </div>
-
-          <div class="pj rv" id="p06">
-            <div class="pj-head"><div class="pj-num">06</div><div><div class="pj-cat">경력 · 실시간 파이프라인</div><div class="pj-title">뇌병변 장애인 기후재난 대비 실시간 모니터링 앱 '기대해'</div></div></div>
-            <p class="pj-body">부산뇌병변복지관과 협력, 폭염·한파 시 뇌병변 장애인 40명의 이상 징후를 실시간으로 감지하는 앱을 구축했습니다. 센서 이탈로 수집 안정성이 60%에 불과한 문제는 이동평균 보간으로 해결하고, 대상자별 신체 패턴 차이로 인한 False Alarm 문제는 비지도 클러스터링 + 개인화 베이스라인 룰로 해결했습니다. Garmin에 직접 방문 협업해 수집 안정성을 90%로 개선했습니다.</p>
-            <div class="pj-res">🏆 AWS 1분 단위 실시간 연동 완료 · Garmin 협업 → 수집 안정성 60% → 90%</div>
-            <div class="pj-tags"><span class="tag b">AWS</span><span class="tag b">Python</span><span class="tag b">Figma</span><span class="tag b">비지도 학습</span><span class="tag g">#개인화 경보</span></div>
-          </div>
-
-          <div class="pj rv" id="p07">
-            <div class="pj-head"><div class="pj-num">07</div><div><div class="pj-cat">수업 프로젝트 · 공모전 1위</div><div class="pj-title">서울시 빅데이터 공모전 — 식습관과 비만율 인과관계 분석</div></div></div>
-            <p class="pj-body">지역별 식습관과 비만율 간 관계를 인과적 관점에서 규명하는 프로젝트입니다. Z-score 스케일링으로 다차원 교란 변수를 정제하고, Moran's I 지수로 비만율 공간적 군집 Hot Spot을 확인했습니다. OLS는 공간 자기상관으로 배제하고 Spatial Lag Model + Panel Data Model을 적용, Hausman Test로 Fixed Effect 적합성을 검증했습니다. 중간 평가 하위권에서 최종 1위를 달성했습니다.</p>
-            <div class="pj-res">🏆 중간 평가 하위권 → 최종 1위 달성 · p-value &lt; 0.01 통계적 유의성</div>
-            <div class="pj-tags"><span class="tag b">Spatial Lag Model</span><span class="tag b">Panel Data</span><span class="tag b">Moran's I</span><span class="tag b">Hausman Test</span><span class="tag g">#공간통계</span></div>
-          </div>
-
-          <div class="pj rv" id="p08">
-            <div class="pj-head"><div class="pj-num">08</div><div><div class="pj-cat">수업 프로젝트 · 개발동아리</div><div class="pj-title">AI 감정분석 기반 서비스 개발 — OpenCV + CNN</div></div></div>
-            <p class="pj-body">실시간 표정 데이터 기반 5가지 감정 상태를 예측하는 모델을 개발했습니다. 특정 감정 데이터 부족으로 예측 편향이 발생해 클래스 가중치·손실함수 변경을 먼저 시도했으나 언더샘플링 발생 → 데이터 증강으로 방향 전환했습니다. 이후 멋쟁이사자처럼 동아리에서 이 알고리즘을 AI 감정일기 앱에 통합, Figma UI 기획 → React 구현 → 해커톤 예선 통과까지 이어졌습니다.</p>
-            <div class="pj-res">감정분석 정확도 85% · 음악 추천 API 연동 파이프라인 구축 · 해커톤 예선 통과</div>
-            <div class="pj-tags"><span class="tag b">OpenCV</span><span class="tag b">CNN</span><span class="tag b">React</span><span class="tag b">GitHub</span><span class="tag b">Figma</span><span class="tag g">#데이터 증강</span></div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  </main>
-</div>
-<footer id="footer"><div><strong style="color:var(--text-sub)">김미주 Kim Miju</strong> · Data Analyst</div><div>부산대학교 정보융합공학과 의생명융합전공</div></footer>
-<script>
-const rvs=document.querySelectorAll('.rv');
-const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');ro.unobserve(e.target);}});},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
-rvs.forEach(el=>ro.observe(el));
-const hb=document.getElementById('hamburger'),dr=document.getElementById('drawer');
-if(hb){hb.addEventListener('click',()=>{hb.classList.toggle('open');dr.classList.toggle('open');});document.addEventListener('click',e=>{if(!hb.contains(e.target)&&!dr.contains(e.target)){hb.classList.remove('open');dr.classList.remove('open');}});}
-const sids=['p01', 'p02', 'p03', 'p04', 'p05', 'p06', 'p07', 'p08'];
-const so=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('#sb a[data-id]').forEach(a=>a.classList.remove('on'));const a=document.querySelector('#sb a[data-id="'+e.target.id+'"]');if(a)a.classList.add('on');}});},{rootMargin:'-25% 0px -65% 0px'});
-sids.forEach(id=>{const el=document.getElementById(id);if(el)so.observe(el);});
-</script>
-</body>
-</html>
+<body><nav id="nav"><a href="index.html" class="nav-brand"><div class="nav-icon">KM</div><span class="nav-name">김미주 포트폴리오</span></a><ul class="nav-links"><li><a href="index.html">홈</a></li><li><a href="about.html">소개</a></li><li><a href="skills.html">역량</a></li><li><a href="projects.html"  class="active">프로젝트</a></li><li><a href="career.html">경력사항</a></li></ul><button class="ham" id="ham" aria-label="메뉴"><span></span><span></span><span></span></button></nav><div class="drawer" id="drawer"><a href="index.html">🏠 홈</a><a href="about.html">📋 소개</a><a href="skills.html">🛠 역량</a><a href="projects.html"  class="da">📁 프로젝트</a><a href="career.html">💼 경력사항</a></div><div id="wrap"><aside id="sb"><div class="sb-sec"><div class="sb-lbl">프로젝트</div><ul class="sb-ul"><li><a href="#p01" data-id="p01">01 · 코호트 인과추론</a></li><li><a href="#p02" data-id="p02">02 · 미세먼지 예측</a></li><li><a href="#p03" data-id="p03">03 · 건강격차 해소</a></li><li><a href="#p04" data-id="p04">04 · 학회 시스템화</a></li><li><a href="#p05" data-id="p05">05 · 응급의료 분석</a></li><li><a href="#p06" data-id="p06">06 · 기대해 앱</a></li><li><a href="#p07" data-id="p07">07 · 서울시 빅데이터</a></li><li><a href="#p08" data-id="p08">08 · AI 감정분석</a></li></ul></div><div class="sb-sec"><div class="sb-lbl">다른 페이지</div><ul class="sb-ul"><li><a href="about.html">📋 소개</a></li><li><a href="skills.html">🛠 역량</a></li><li><a href="career.html">💼 경력사항</a></li></ul></div></aside><main id="main"><section class="sec" id="p01"><div class="wrap"><div class="eyebrow">Projects</div><h2 class="sec-h">데이터가 정책이 되는 순간들</h2><p class="sec-d">연구실에서 시작해 실제 정책 데이터로 채택된 대표 프로젝트입니다.</p><div class="pj-list"><div class="pj rv"><div class="pj-head"><div class="pj-num">01</div><div><div class="pj-cat">경력 · 인과추론</div><div class="pj-title">초미세먼지 노출에 따른 만성 신장질환자의 AKI 발생 위험 분석</div></div></div><p class="pj-body">국민건강보험공단 2010–2019년 30만 명 코호트를 활용해 PM2.5 장기 노출이 CKD 환자의 AKI 발생에 미치는 인과적 영향을 검증했습니다. 기존 고정 노출 가정 모델의 한계를 극복하기 위해 Time-varying Cox Model을 설계하고, 1:2 성향점수매칭으로 혼란 변수를 통제해 결과의 견고성을 확보했습니다.</p><div class="pj-res">🏆 HR 1.05 입증 (p&lt;.001) · RHR 1.13 · 국제 신장학회(APCN) 제1저자 발표</div><div class="tags"><span class="tag b">Time-varying Cox</span><span class="tag b">PSM 1:2</span><span class="tag b">Causal Inference</span><span class="tag b">R</span><span class="tag b">국민건강보험공단 DB</span><span class="tag g">#인과추론</span></div><details class="star-d"><summary>STAR 상세 보기</summary><div class="sb"><div class="sr"><div class="sl">Situation</div>PM2.5 노출과 CKD 환자의 AKI 발생 위험 간 관계 분석. 고정 노출 가정 모델은 시간 간극과 변하는 Confounders를 통제하지 못한다는 한계가 있었습니다.</div><div class="sr"><div class="sl">Task</div>10년 규모 건강보험공단 데이터에서 시간 가변적 노출 환경을 반영하면서 혼란 변수를 통제해 결과 신뢰도를 확보해야 했습니다.</div><div class="sr"><div class="sl">Action</div>Time-varying Cox Model 설계, 사망·이탈자 중도절단 처리, 표본 손실 최소화를 위한 1:2 PSM 적용, 공변수 균형 확보.</div><div class="sr"><div class="sl">Result</div>PM2.5 단위 증가 시 CKD 환자의 AKI 발생 위험 1.05배 상승 입증 · PSM 후에도 RHR 1.13으로 견고성 확인 · 국제 신장학회 1저자 발표.</div></div></details></div><div class="pj rv" id="p02"><div class="pj-head"><div class="pj-num">02</div><div><div class="pj-cat">경력 · 예측 모델링 · 수상</div><div class="pj-title">위성 데이터 파이프라인 × GAM 앙상블 — 예측 정확도 98% (R²=0.983)</div></div></div><p class="pj-body">기상청 단일 관측소의 대표성 한계를 발견하고 세부 집단에서 결과가 달라지는 원인을 추적했습니다. Google Earth Engine으로 1km² 격자 단위 고해상도 위성 DB를 직접 구축하고, 대기 잡음으로 인한 30% 결측치는 인접 시점·지역 데이터를 함께 활용하는 보정 방식으로 해결했습니다. SVR·Random Forest·XGBoost 앙상블 + GAM 및 Spline 비선형성 보정을 결합해 최종 모델을 완성, 재사용 가능한 파이프라인 구조로 설계했습니다.</p><div class="pj-res">🏆 환경부 기후변화 대응 환경보건센터 공식 채택 · 산학캡스톤 장려상</div><div class="tags"><span class="tag b">Google Earth Engine</span><span class="tag b">GAM 앙상블</span><span class="tag b">XGBoost</span><span class="tag b">Python / R</span><span class="tag g">#지속가능한 파이프라인</span><span class="tag g">#원데이터 통제</span></div><details class="star-d"><summary>STAR 상세 보기</summary><div class="sb"><div class="sr"><div class="sl">Situation</div>기상청 GIS 데이터가 자치구 1개 관측소로 넓은 지역을 대표 → 전체 집단에서 유의했던 연관성이 세부 집단에서 유의하지 않는 오류 발견.</div><div class="sr"><div class="sl">Task</div>데이터 정합도 검증 및 오류 원인 규명 · 지역별 편차와 비선형 관계를 반영한 예측 모델 고도화.</div><div class="sr"><div class="sl">Action</div>위성 기반 1km² 격자 DB 직접 구축 → 보간 기법으로 30% 결측 보정 → 트리 기반 3종 앙상블 → GAM + Spline 비선형성 보정 결합 → R로 행정동 단위 시각화.</div><div class="sr"><div class="sl">Result</div>예측 정확도 98% 달성 · 환경부 공식 채택 · CKD 환자 미세먼지 단위 증가당 AKI 위험 5% 상승 일관된 결과 확보 · 산학캡스톤 장려상.</div></div></details></div><div class="pj rv" id="p03"><div class="pj-head"><div class="pj-num">03</div><div><div class="pj-cat">경력 · 정책 효과 검증</div><div class="pj-title">부산시 소지역 건강격차 해소사업 — DID 분석 및 성과지표 개발</div></div></div><p class="pj-body">3년간 수행된 부산시 건강증진사업 성과 평가에서, 담당자별로 엉킨 엑셀로 데이터 무결성이 훼손되어 있었고 의료진(임상 기준)과 복지사(정성적 복지 기준) 간 지표 갈등이 발생했습니다. 1,703명 동일 ID 기준 원천 데이터 전수조사(수천 장 설문지 직접 검토, 주소지 한 건씩 대조), Python 파이프라인 자동화, "질환인지율" 신규 지표 개발로 이해관계자 합의를 이끌어냈습니다. DID 실험 설계로 대조 지역 대비 200% 개선 효과를 인과적으로 입증했습니다.</p><div class="pj-res">🏆 대조 지역 대비 200% 개선 · 차년도 사업 확장 공식 근거 자료</div><div class="tags"><span class="tag b">DID</span><span class="tag b">A/B Test</span><span class="tag b">SAS</span><span class="tag b">Python</span><span class="tag b">패널 DB</span><span class="tag g">#갈등관리</span><span class="tag g">#지표 개발</span></div><details class="star-d"><summary>STAR 상세 보기</summary><div class="sb"><div class="sr"><div class="sl">Situation</div>비정형·파편화 데이터 + 의료진·복지사 간 지표 갈등 → 데이터 무결성과 지표 합의가 동시에 확보되지 않으면 정책 의사결정 신뢰 불가.</div><div class="sr"><div class="sl">Task</div>1,703명 패널 DB 구축 · DID로 순효과 검증 · 양측이 납득할 수 있는 성과 지표 합의 도출.</div><div class="sr"><div class="sl">Action</div>수천 장 설문지 전수 확인 · 주소지 대조 · SPSS로 결측치 정제 · Python 전처리 파이프라인 · 선행 연구 기반 "질환인지율" 지표 제안 · DID 분석 수행.</div><div class="sr"><div class="sl">Result</div>대조 지역 대비 200% 개선 증명 · 차년도 사업 확장 근거 · 코딩 가이드라인 공식 기준으로 채택.</div></div></details></div><div class="pj rv" id="p04"><div class="pj-head"><div class="pj-num">04</div><div><div class="pj-cat">경력 · 시스템화</div><div class="pj-title">한국건강형평성학회 간사 — 수기 프로세스 → 자동화 파이프라인</div></div></div><p class="pj-body">엑셀 수기 회원 관리 체계를 개선하기 위해 Figma로 웹 UI를 직접 기획하고, 정밀 DB 구축 및 이메일 연동 자동화 홍보 시스템을 단독 구축했습니다. 외부 솔루션 도입을 검토했으나 예산 제한으로 자체 제작 방향으로 전환, 5회 학술대회·6회 세미나를 총괄 운영하며 운영 기준을 표준화했습니다.</p><div class="pj-res">🏆 정회원 500명 → 1,200명 (+140%) · 재정자립도 200% 향상 · 11회 학술대회 총괄</div><div class="tags"><span class="tag b">Python</span><span class="tag b">Figma</span><span class="tag b">웹 개발</span><span class="tag b">이메일 자동화</span><span class="tag g">#시스템화</span><span class="tag g">#rule-setting</span></div></div><div class="pj rv" id="p05"><div class="pj-head"><div class="pj-num">05</div><div><div class="pj-cat">경력 · 이종데이터 통합</div><div class="pj-title">부산시 응급의료 분석 및 지역별 건강취약지수 모델링</div></div></div><p class="pj-body">7대 광역시 응급의료 데이터에서 출처가 다른 20여 개 복합 변수를 연계해야 했고, 변수를 그대로 통합하면 다중공선성이 발생하는 문제가 있었습니다. 상관관계 히트맵으로 중복 변수를 제거하고, Z-score 표준화 → Estimate 기반 취약지수 산출 로직을 직접 설계했습니다. 샘플 데이터 초안으로 팀 내 변수 선정 의견을 조율하고, Tableau·QGIS로 고위험 지역을 시각화해 정책 담당자를 설득했습니다.</p><div class="pj-res">🏆 부산시 보건정책 공식 근거 자료 채택 · 정책 브리핑 자료 활용</div><div class="tags"><span class="tag b">QGIS</span><span class="tag b">Tableau</span><span class="tag b">Python</span><span class="tag b">이종데이터 통합</span><span class="tag g">#다중공선성 해결</span><span class="tag g">#이견 조율</span></div><details class="star-d"><summary>STAR 상세 보기</summary><div class="sb"><div class="sr"><div class="sl">Situation</div>20여 개 이종 변수 연계 환경 · 다중공선성으로 분석 왜곡 위험 · 팀 내 변수 선정 의견 충돌.</div><div class="sr"><div class="sl">Task</div>데이터 전처리·변수 선정 총괄 · 지역별 건강 위험을 하나의 지표로 정량화 · 정책 담당자 설득 가능한 결과 도출.</div><div class="sr"><div class="sl">Action</div>상관관계 히트맵으로 중복 제거 → Z-score 표준화 → Estimate 기반 지수 설계 → 샘플 데이터 초안으로 팀 합의 → QGIS+Tableau로 시각화.</div><div class="sr"><div class="sl">Result</div>부산시 보건정책 공식 근거 자료 채택 · 질환별 고위험 지역 탐지 · 정책 브리핑 자료 활용.</div></div></details></div><div class="pj rv" id="p06"><div class="pj-head"><div class="pj-num">06</div><div><div class="pj-cat">경력 · 실시간 파이프라인</div><div class="pj-title">뇌병변 장애인 기후재난 대비 실시간 모니터링 앱 "기대해"</div></div></div><p class="pj-body">부산뇌병변복지관과 협력, 폭염·한파 시 뇌병변 장애인 40명의 이상 징후를 실시간으로 감지하는 앱을 구축했습니다. 센서 이탈로 수집 안정성이 60%에 불과한 문제는 이동평균 보간으로 해결(선형 보간은 복합 요소로 부적합하여 배제)하고, 대상자별 신체 패턴 차이로 인한 False Alarm 문제는 비지도 클러스터링 + 개인화 베이스라인 룰로 해결했습니다. Garmin에 직접 방문 협업을 이끌어내 데이터 수집 안정성을 60%→90%로 개선했습니다.</p><div class="pj-res">🏆 AWS 1분 단위 실시간 연동 완료 · Garmin 협업 → 수집 안정성 60% → 90%</div><div class="tags"><span class="tag b">AWS</span><span class="tag b">Python</span><span class="tag b">Figma</span><span class="tag b">비지도 학습</span><span class="tag b">실시간 파이프라인</span><span class="tag g">#외부 협업</span><span class="tag g">#개인화 경보</span></div></div><div class="pj rv" id="p07"><div class="pj-head"><div class="pj-num">07</div><div><div class="pj-cat">수업 프로젝트 · 공모전 1위</div><div class="pj-title">서울시 빅데이터 공모전 — 식습관과 비만율 인과관계 분석</div></div></div><p class="pj-body">지역별 식습관과 비만율 간 관계를 단순 상관관계가 아닌 인과적 관점에서 규명하는 프로젝트입니다. 전국 시군구 단위 공공 보건 빅데이터 수집 후 Z-score 스케일링으로 교란 변수를 정제하고, Moran's I 지수로 비만율의 공간적 군집 Hot Spot을 확인했습니다. OLS는 공간 자기상관으로 잔차 독립성 가정 위배를 확인해 배제하고, Spatial Lag Model + Panel Data Model 적용, Hausman Test로 Fixed Effect 적합성을 검증했습니다.</p><div class="pj-res">🏆 중간 평가 하위권에서 최종 1위 달성 · p-value &lt; 0.01 통계적 유의성 확보</div><div class="tags"><span class="tag b">Spatial Lag Model</span><span class="tag b">Panel Data</span><span class="tag b">Moran's I</span><span class="tag b">Hausman Test</span><span class="tag b">Python</span><span class="tag g">#공간통계</span></div></div><div class="pj rv" id="p08"><div class="pj-head"><div class="pj-num">08</div><div><div class="pj-cat">수업 프로젝트 · 개발동아리</div><div class="pj-title">AI 감정분석 기반 서비스 개발 — OpenCV + CNN + 해커톤 예선 통과</div></div></div><p class="pj-body">실시간 표정 데이터 기반 5가지 감정 상태를 예측하는 모델을 개발했습니다. 특정 감정 데이터 부족으로 예측 편향이 발생해 클래스 가중치 조정·손실함수 변경을 먼저 시도했으나 언더샘플링 발생 → 데이터 증강으로 방향 전환했습니다. 이후 멋쟁이사자처럼 동아리에서 이 알고리즘을 AI 감정일기 앱에 통합, Figma UI 기획 → React 구현 → GitHub 협업 → 해커톤 예선 통과까지 이어졌습니다.</p><div class="pj-res">감정분석 정확도 85% · 음악 추천 API 연동 파이프라인 구축 · 해커톤 예선 통과</div><div class="tags"><span class="tag b">OpenCV</span><span class="tag b">CNN</span><span class="tag b">React</span><span class="tag b">GitHub</span><span class="tag b">Figma</span><span class="tag g">#데이터 증강</span><span class="tag g">#API 연동</span></div></div></div></div></section></main></div><footer id="footer"><div><strong style="color:var(--text-sub)">김미주 Kim Miju</strong> · Data Analyst</div><div>부산대학교 정보융합공학과 의생명융합전공</div></footer><script>
+var rvs=document.querySelectorAll(".rv");var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");ro.unobserve(e.target);}});},{threshold:.08,rootMargin:"0px 0px -30px 0px"});rvs.forEach(function(el){ro.observe(el);});
+var _ids=["p01", "p02", "p03", "p04", "p05", "p06", "p07", "p08"];var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){document.querySelectorAll("#sb a[data-id]").forEach(function(a){a.classList.remove("on");});var a=document.querySelector("#sb a[data-id=\""+e.target.id+"\"]");if(a)a.classList.add("on");}});},{rootMargin:"-25% 0px -65% 0px"});_ids.forEach(function(id){var el=document.getElementById(id);if(el)so.observe(el);});
+var hb=document.getElementById("ham"),dr=document.getElementById("drawer");if(hb){hb.addEventListener("click",function(){hb.classList.toggle("open");dr.classList.toggle("open");});document.addEventListener("click",function(e){if(!hb.contains(e.target)&&!dr.contains(e.target)){hb.classList.remove("open");dr.classList.remove("open");}});}
+</script></body></html>
